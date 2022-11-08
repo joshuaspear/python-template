@@ -40,7 +40,7 @@ env_name = ""
 try:
     if env_name == "":
         raise KeyError("env_name variable set to '' in __init__")
-    home_path = os.environ[""]
+    home_path = os.environ[env_name]
     file_handler = logging.FileHandler(
         os.path.join(home_path, "{}_log.txt".format(logging_name)))
     file_handler.setFormatter(CustomFormatter())
